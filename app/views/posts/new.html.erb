@@ -1,0 +1,20 @@
+<%= form_for @post, html: { role: "form" } do |f| %>
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: "form-control", placeholder: "Hello World" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :body %>
+    <%= f.text_area :body, class: "form-control", rows: 10 %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :author_name, "Author Name" %>
+    <%= f.text_field :author_name, class: "form-control", placeholder: "Jane Doe" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit class: "btn btn-primary" %>
+  </div>
+<% end %>

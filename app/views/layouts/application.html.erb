@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FluffyBlog</title>
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+<%= csrf_meta_tags %>
+</head>
+<body>
+
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <%= link_to "FluffyJack's Blog", root_path, class: "navbar-brand" %>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li><%= link_to 'Add Post', new_post_path %></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+  <% if flash[:notice] %>
+    <div class="alert alert-success" role="alert">
+      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+      <strong>Success!</strong> <%= flash[:notice] %>
+    </div>
+  <% end %>
+
+  <%= yield %>
+</div>
+
+</body>
+</html>
